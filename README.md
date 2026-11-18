@@ -73,7 +73,7 @@ Thống kê doanh thu cơ bản theo tháng.
 
 ### 🚀 3. Hướng dẫn cài đặt và chạy thử
 
-Clone repository này về máy tính: git clone [Link Repo của bạn]
+Clone repository này về máy tính: git clone (https://github.com/hung-30/BC.NET_QuanLyKTX.git)
 
 Mở file script SQL [Tên file database].sql trong thư mục Database và chạy trong SQL Server để khởi tạo dữ liệu.
 
