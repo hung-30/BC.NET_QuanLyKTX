@@ -5,7 +5,10 @@
 ---
 
 - **Giảng viên hướng dẫn:** THS.CẤN ĐỨC ĐIỆP
+- **Lớp:** D19CNPM3
 - **Nhóm thực hiện:** 18
+- **Thành viên:** Phạm Hữu Hưng  - 24810310239
+                  Nguyễn Xuân An -24810310247
 
 ---
 
