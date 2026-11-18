@@ -9,7 +9,7 @@
 
 ---
 
-📖 **1. Giới thiệu đề tài**
+### 📖 1. Giới thiệu đề tài
 
 Hệ thống Quản lý Ký túc xá là một phần mềm được xây dựng trên nền tảng .NET nhằm hỗ trợ Ban quản lý ký túc xá tối ưu hóa quy trình làm việc. Hệ thống giúp số hóa các thao tác thủ công, giảm thiểu sai sót trong việc lưu trữ hồ sơ, đồng thời minh bạch hóa quá trình tính toán chi phí lưu trú của sinh viên.
 
@@ -33,11 +33,11 @@ Cơ sở dữ liệu: Microsoft SQL Server
 
 Công cụ quản lý source code: Git & GitHub
 
-👥 2. Phân chia công việc 
+### 👥 2. Phân chia công việc 
 
 Dự án được thực hiện bởi 2 thành viên, với khối lượng công việc được chia đều dựa trên các module nghiệp vụ như sau:
 
-🧑‍💻 Thành viên 1: Nguyễn Xuân An - 24810310247
+#### 🧑‍💻 Thành viên 1: Nguyễn Xuân An - 24810310247
 
 Đảm nhiệm Module Quản lý Danh mục & Lưu trú (Core Data & Placement)
 
@@ -53,7 +53,7 @@ Xử lý logic Check-in (chỉ cho phép thêm SV vào phòng còn giường, t�
 
 Xử lý logic Check-out (xóa SV khỏi phòng, tự động cộng lại số giường trống).
 
-🧑‍💻 Thành viên 2: Phạm Hữu Hưng - 24810310239
+#### 🧑‍💻 Thành viên 2: Phạm Hữu Hưng - 24810310239
 
 Đảm nhiệm Module Dịch vụ, Tài chính & Hệ thống (Operations & Billing)
 
@@ -71,7 +71,7 @@ Cập nhật trạng thái thanh toán (Đã thu / Còn nợ).
 
 Thống kê doanh thu cơ bản theo tháng.
 
-🚀 3. Hướng dẫn cài đặt và chạy thử
+### 🚀 3. Hướng dẫn cài đặt và chạy thử
 
 Clone repository này về máy tính: git clone [Link Repo của bạn]
 
