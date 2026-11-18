@@ -29,6 +29,8 @@ Công nghệ sử dụng:
 
 Ngôn ngữ: C#
 
+Giao diện	Windows Forms
+
 Cơ sở dữ liệu: Microsoft SQL Server
 
 Công cụ quản lý source code: Git & GitHub
@@ -71,7 +73,19 @@ Cập nhật trạng thái thanh toán (Đã thu / Còn nợ).
 
 Thống kê doanh thu cơ bản theo tháng.
 
-### 🚀 3. Hướng dẫn cài đặt và chạy thử
+### 3. Cấu trúc thư mục
+BC_LT.NET/
+├── database/
+│   └── QuanLyKTX.sql        # Script tạo database + dữ liệu mẫu
+├── GUI/                     # Các form giao diện
+├── BLL/                     # Xử lý nghiệp vụ
+├── DAL/                     # Truy cập dữ liệu
+├── DTO/                     # Các lớp đối tượng
+├── docs/                    # Báo cáo, use case, ERD
+├── .gitignore
+└── README.md
+
+### 🚀 4. Hướng dẫn cài đặt và chạy thử
 
 Clone repository này về máy tính: git clone (https://github.com/hung-30/BC.NET_QuanLyKTX.git)
 
