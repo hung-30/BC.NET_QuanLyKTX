@@ -1,112 +1,114 @@
 # BÁO CÁO KẾT THÚC HỌC PHẦN LẬP TRÌNH .NET
----
 
-## ĐỂ TÀI: XÂY DỰNG PHẦN MỀM QUẢN LÝ KTX
----
+## ĐỀ TÀI: XÂY DỰNG PHẦN MỀM QUẢN LÝ KÝ TÚC XÁ
 
-- **Giảng viên hướng dẫn:** THS.CẤN ĐỨC ĐIỆP
+- **Giảng viên hướng dẫn:** ThS. Cấn Đức Điệp
 - **Lớp:** D19CNPM3
 - **Nhóm thực hiện:** 18
-- **Thành viên:**
-Phạm Hữu Hưng  - 24810310239
 
-                Nguyễn Xuân An -24810310247
+| Thành viên | MSSV |
+|---|---|
+| Phạm Hữu Hưng | 24810310239 |
+| Nguyễn Xuân An | 24810310247 |
 
 ---
 
-### 📖 1. Giới thiệu đề tài
+## 1. Giới thiệu đề tài
 
-Hệ thống Quản lý Ký túc xá là một phần mềm được xây dựng trên nền tảng .NET nhằm hỗ trợ Ban quản lý ký túc xá tối ưu hóa quy trình làm việc. Hệ thống giúp số hóa các thao tác thủ công, giảm thiểu sai sót trong việc lưu trữ hồ sơ, đồng thời minh bạch hóa quá trình tính toán chi phí lưu trú của sinh viên.
+Hệ thống Quản lý Ký túc xá là phần mềm desktop xây dựng trên nền tảng .NET, hỗ trợ Ban quản lý ký túc xá tối ưu hóa quy trình làm việc. Hệ thống giúp số hóa các thao tác thủ công, giảm sai sót trong lưu trữ hồ sơ, đồng thời minh bạch hóa quá trình tính toán chi phí lưu trú của sinh viên.
 
-Các tính năng cốt lõi (Core Features):
+### Các tính năng cốt lõi
 
-Quản lý danh mục cơ sở vật chất (Tòa nhà, Phòng ban).
+- Quản lý danh mục cơ sở vật chất (tòa nhà, phòng, loại phòng, giường)
+- Quản lý thông tin và hồ sơ nội trú của sinh viên
+- Xử lý nghiệp vụ phân phòng (check-in) và trả phòng (check-out)
+- Quản lý số điện, nước tiêu thụ hàng tháng
+- Tự động tính toán, phát sinh hóa đơn và quản lý trạng thái thanh toán
+- Đăng nhập, phân quyền và quản lý tài khoản cán bộ
 
-Quản lý thông tin và hồ sơ nội trú của Sinh viên.
+### Công nghệ sử dụng
 
-Xử lý nghiệp vụ phân phòng (Check-in) và trả phòng (Check-out).
+| Thành phần | Công nghệ |
+|---|---|
+| Ngôn ngữ | C# |
+| Giao diện | Windows Forms |
+| Cơ sở dữ liệu | Microsoft SQL Server |
+| Kiến trúc | 3 lớp (GUI – BUS – DAL) |
+| Quản lý mã nguồn | Git & GitHub |
 
-Quản lý số điện, nước tiêu thụ hàng tháng.
+---
 
-Tự động tính toán, phát sinh hóa đơn và quản lý trạng thái thanh toán.
+## 2. Phân chia công việc
 
-Công nghệ sử dụng:
+Dự án do 2 thành viên thực hiện, khối lượng công việc được chia đều theo các module nghiệp vụ.
 
-Ngôn ngữ: C#
+### Thành viên 1: Nguyễn Xuân An (24810310247)
 
-Giao diện	Windows Forms
+**Module Quản lý Danh mục & Lưu trú (Core Data & Placement)**
 
-Cơ sở dữ liệu: Microsoft SQL Server
+- **Thiết kế database (làm chung):** lên sơ đồ CSDL, tạo bảng và khóa
+- **Quản lý tòa nhà và phòng:**
+  - Thêm, sửa, xóa thông tin tòa nhà, loại phòng, giá phòng
+  - Thiết lập logic quản lý số giường trống trong mỗi phòng
+- **Quản lý hồ sơ sinh viên:** quản lý thông tin cá nhân của sinh viên đăng ký nội trú
+- **Nghiệp vụ xếp/trả phòng:**
+  - Check-in: chỉ cho phép thêm sinh viên vào phòng còn giường, tự động trừ số giường trống
+  - Check-out: xóa sinh viên khỏi phòng, tự động cộng lại số giường trống
 
-Công cụ quản lý source code: Git & GitHub
+### Thành viên 2: Phạm Hữu Hưng (24810310239)
 
-### 👥 2. Phân chia công việc 
+**Module Dịch vụ, Tài chính & Hệ thống (Operations & Billing)**
 
-Dự án được thực hiện bởi 2 thành viên, với khối lượng công việc được chia đều dựa trên các module nghiệp vụ như sau:
+- **Thiết kế database (làm chung):** lên sơ đồ CSDL, tạo bảng và khóa
+- **Module hệ thống:** đăng nhập, đăng xuất, quản lý tài khoản cán bộ nhân viên
+- **Quản lý điện và nước:** ghi nhận và tính toán số điện, số nước tiêu thụ hàng tháng cho từng phòng
+- **Quản lý hóa đơn và thanh toán (Core):**
+  - Tự động phát sinh hóa đơn tổng hợp (tiền phòng + tiền điện + tiền nước) hàng tháng
+  - Cập nhật trạng thái thanh toán (đã thu / còn nợ)
+  - Thống kê doanh thu cơ bản theo tháng
 
-#### 🧑‍💻 Thành viên 1: Nguyễn Xuân An - 24810310247
+---
 
-Đảm nhiệm Module Quản lý Danh mục & Lưu trú (Core Data & Placement)
+## 3. Cấu trúc thư mục
 
-Thiết kế Database (Làm chung): Lên sơ đồ CSDL, tạo bảng và khóa.
-
-Quản lý Tòa nhà & Phòng: Thêm/sửa/xóa thông tin tòa nhà, loại phòng, giá phòng. Thiết lập logic quản lý số lượng giường trống trong mỗi phòng.
-
-Quản lý Hồ sơ Sinh viên: Quản lý thông tin cá nhân của sinh viên đăng ký nội trú.
-
-Nghiệp vụ Xếp/Trả phòng:
-
-Xử lý logic Check-in (chỉ cho phép thêm SV vào phòng còn giường, tự động trừ số giường trống).
-
-Xử lý logic Check-out (xóa SV khỏi phòng, tự động cộng lại số giường trống).
-
-#### 🧑‍💻 Thành viên 2: Phạm Hữu Hưng - 24810310239
-
-Đảm nhiệm Module Dịch vụ, Tài chính & Hệ thống (Operations & Billing)
-
-Thiết kế Database (Làm chung): Lên sơ đồ CSDL, tạo bảng và khóa.
-
-Module Hệ thống: Lập trình chức năng Đăng nhập, Đăng xuất, và quản lý tài khoản của cán bộ nhân viên.
-
-Quản lý Điện & Nước: Xây dựng chức năng ghi nhận và tính toán số điện, số nước tiêu thụ hàng tháng cho từng phòng.
-
-Quản lý Hóa đơn & Thanh toán (Core):
-
-Tự động phát sinh hóa đơn tổng hợp (Tiền phòng + Tiền điện + Tiền nước) hàng tháng.
-
-Cập nhật trạng thái thanh toán (Đã thu / Còn nợ).
-
-Thống kê doanh thu cơ bản theo tháng.
-
-### 3. Cấu trúc thư mục
-BC_LT.NET/
-
-├── database/
-
+```
+BC.NET_QuanLyKTX/
+├── Database/
 │   └── QuanLyKTX.sql       # Script tạo database + dữ liệu mẫu
-
-├── GUI/                     # Các form giao diện
-
-├── BLL/                     # Xử lý nghiệp vụ
-
-├── DAL/                     # Truy cập dữ liệu
-
-├── DTO/                     # Các lớp đối tượng
-
-├── docs/                    # Báo cáo, use case, ERD
-
+├── GUI/                    # Các form giao diện
+├── BUS/                    # Xử lý nghiệp vụ
+├── DAL/                    # Truy cập dữ liệu
+├── DTO/                    # Các lớp đối tượng
+├── docs/                   # Báo cáo, use case, ERD
 ├── .gitignore
-
 └── README.md
+```
 
-### 🚀 4. Hướng dẫn cài đặt và chạy thử
+---
 
-Clone repository này về máy tính: git clone (https://github.com/hung-30/BC.NET_QuanLyKTX.git)
+## 4. Hướng dẫn cài đặt và chạy thử
 
-Mở file script SQL [Tên file database].sql trong thư mục Database và chạy trong SQL Server để khởi tạo dữ liệu.
+1. Clone repository về máy:
+   ```
+   git clone https://github.com/hung-30/BC.NET_QuanLyKTX.git
+   ```
+2. Mở SQL Server Management Studio, chạy file `Database/QuanLyKTX.sql` để khởi tạo database và dữ liệu mẫu.
+3. Mở file solution (`.sln`) bằng Visual Studio.
+4. Cập nhật chuỗi kết nối (Connection String) tới SQL Server của máy bạn trong file `App.config`.
+5. Build và chạy dự án (F5).
 
-Mở Solution bằng Visual Studio.
+### Tài khoản mặc định
 
-Cập nhật lại chuỗi kết nối (Connection String) tới SQL Server của bạn tại file [App.config hoặc appsettings.json].
+| Vai trò | Tên đăng nhập | Mật khẩu |
+|---|---|---|
+| Admin | `admin` | `admin123` |
+| Quản lý | `quanly1` | `quanly123` |
 
-Build và Run dự án.
+---
+
+## 5. Quy ước làm việc nhóm
+
+- Không code trực tiếp trên `main`; mỗi người làm trên nhánh riêng
+- Merge về `main` qua Pull Request, khoảng 2–3 ngày một lần
+- Mỗi người chỉ sửa form thuộc module của mình; sửa phần dùng chung phải báo nhau trước
+- Mọi thay đổi database phải cập nhật vào `Database/QuanLyKTX.sql`
