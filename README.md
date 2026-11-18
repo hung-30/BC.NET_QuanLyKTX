@@ -76,21 +76,13 @@ Thống kê doanh thu cơ bản theo tháng.
 ### 3. Cấu trúc thư mục
 BC_LT.NET/
 ├── database/
-
 │   └── QuanLyKTX.sql        # Script tạo database + dữ liệu mẫu
-
 ├── GUI/                     # Các form giao diện
-
 ├── BLL/                     # Xử lý nghiệp vụ
-
 ├── DAL/                     # Truy cập dữ liệu
-
 ├── DTO/                     # Các lớp đối tượng
-
 ├── docs/                    # Báo cáo, use case, ERD
-
 ├── .gitignore
-
 └── README.md
 
 ### 🚀 4. Hướng dẫn cài đặt và chạy thử
